@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O/L Study Plan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff6b6b;
+            --background-dark: #121212;
+            --text-light: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('https://c4.wallpaperflare.com/wallpaper/772/500/970/photography-japan-mount-fuji-wallpaper-preview.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        #countdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            z-index: 1000;
+        }
+
+        #snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .snowflake {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            perspective: 1000px;
+        }
+
+        .week-section {
+            background: rgba(18, 18, 18, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+            transform-style: preserve-3d;
+            margin-bottom: 20px;
+        }
+
+        .week-section:hover {
+            transform: translateZ(20px) rotateX(5deg);
+        }
+
+        h1, h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        .week-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .week-number {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .schedule-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .music-note {
+            color: var(--primary-color);
+            margin-left: 5px;
+        }
+
+        .motto {
+            text-align: center;
+            font-style: italic;
+            color: var(--primary-color);
+            margin: 20px 0;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.7; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        #page-title {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown"></div>
+    <div id="snow-container"></div>
+    
+    <h1 id="page-title">O/L Study Plan</h1>
+
+    <div class="container">
+        <div class="week-section">
+            <div class="motto">"Transform Challenges into Achievements"</div>
+            
+            <div class="week-header">
+                <h2>Week 1</h2>
+                <div class="week-number">Feb 1-7</div>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h3>Morning Routine</h3>
+                    <p>7:00 AM - 9:00 AM: Prepare & Energize</p>
+                    <p>9:00 AM - 2:00 PM: School Focus</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Afternoon Study</h3>
+                    <p>2:30 PM - 4:30 PM: History Deep Dive</p>
+                    <p>4:30 PM - 4:40 PM: Music Break 🎵</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Evening Learning</h3>
+                    <p>5:40 PM - 7:10 PM: Sinhala Mastery</p>
+                    <p>7:10 PM - 9:10 PM: Science Exploration</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Night Study</h3>
+                    <p>9:10 PM - 9:20 PM: Refresh Break 🎵</p>
+                    <p>9:20 PM - 11:30 PM: Mathematics Practice</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 2</h2>
+                <div class="week-number">Feb 8-14</div>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h3>Focus Areas</h3>
+                    <p>Buddhism Syllabus Review</p>
+                    <p>Sinhala Essay Techniques</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Mock Preparation</h3>
+                    <p>ICT Paper Strategy</p>
+                    <p>Science Experiment Practice</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Weekend Goals</h3>
+                    <p>Saturday: Poetry & Commerce</p>
+                    <p>Sunday: Full Mock Tests</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Key Strategy</h3>
+                    <p>Balanced Theory & Practice</p>
+                    <p>Targeted Subject Revision</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 3</h2>
+                <div class="week-number">Feb 15-21</div>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h3>Mock Test Focus</h3>
+                    <p>ICT and Commerce Practice</p>
+                    <p>Sinhala Past Paper Corrections</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Science Strategy</h3>
+                    <p>Grade 11 Experiments Review</p>
+                    <p>Structured Question Techniques</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Weekend Goals</h3>
+                    <p>History Essay Writing</p>
+                    <p>Maths Geometry Deep Dive</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Key Strategy</h3>
+                    <p>Targeted Subject Strengthening</p>
+                    <p>Performance Analysis</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 4</h2>
+                <div class="week-number">Feb 22-28</div>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h3>Revision Intensive</h3>
+                    <p>ICT Theory Deepening</p>
+                    <p>Commerce Application Questions</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Weak Subject Focus</h3>
+                    <p>Quick Quizzes in Sinhala</p>
+                    <p>History Concept Mapping</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Weekend Prep</h3>
+                    <p>Buddhism Mock Tests</p>
+                    <p>Science Diagram Practice</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Strategy Shift</h3>
+                    <p>Comprehensive Subject Review</p>
+                    <p>Exam Technique Refinement</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 5</h2>
+                <div class="week-number">Feb 29-Mar 6</div>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h3>Past Paper Intensive</h3>
+                    <p>Timed Subject Practices</p>
+                    <p>Sinhala Essay Mastery</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Time Management</h3>
+                    <p>History Essay Speed</p>
+                    <p>Commerce Timed Tests</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Problem-Solving</h3>
+                    <p>Maths Speed Techniques</p>
+                    <p>Science Analytical Approach</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Performance Track</h3>
+                    <p>Mock Test Analysis</p>
+                    <p>Personalized Improvement Plan</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="week-section">
+            <div class="week-header">
+                <h2>Week 6</h2>
+                <div class="week-number">Mar 7-13</div>
+            </div>
+            
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <h3>Weak Area Focus</h3>
+                    <p>Targeted Subject Improvement</p>
+                    <p>Mock Test Result Analysis</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>English Prep</h3>
+                    <p>Grammar Intensive</p>
+                    <p>Comprehension Techniques</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Science Deep Dive</h3>
+                    <p>Experiment Recall</p>
+                    <p>Structured Question Mastery</p>
+                </div>
+                <div class="schedule-item">
+                    <h3>Final Push</h3>
+                    <p>Confidence Building</p>
+                    <p>Mental Preparation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            // Set Exam Date to 2025/03/16 at 23:59 in Asia/Colombo timezone
+            const timeZone = 'Asia/Colombo';
+            const examDate = new Date('2025-03-16T23:59:59+05:30');
+
+            // Get current date and time in Colombo timezone
+            const now = new Date().toLocaleString('en-US', { timeZone });
+            const currentDate = new Date(now);
+
+            const difference = examDate - currentDate;
+
+            const days = Math.max(0, Math.floor(difference / (1000 * 60 * 60 * 24)));
+            const hours = Math.max(0, Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            const minutes = Math.max(0, Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)));
+            const seconds = Math.max(0, Math.floor((difference % (1000 * 60)) / 1000));
+
+            document.getElementById('countdown').innerHTML = `Exam In: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        function createSnowflakes() {
+            const snowContainer = document.getElementById('snow-container');
+            const flakeCount = 100;
+
+            for (let i = 0; i < flakeCount; i++) {
+                const flake = document.createElement('div');
+                flake.classList.add('snowflake');
+                
+                flake.style.left = `${Math.random() * 100}%`;
+                flake.style.animationDuration = `${Math.random() * 10 + 5}s`;
+                flake.style.opacity = Math.random().toString();
+                flake.style.width = `${Math.random() * 3 + 2}px`;
+                flake.style.height = flake.style.width;
+
+                snowContainer.appendChild(flake);
+            }
+        }
+
+        createSnowflakes();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
